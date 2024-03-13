@@ -1,0 +1,6 @@
+@TizzaAula_HostAddress = http://localhost:5130
+
+GET {{TizzaAula_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
