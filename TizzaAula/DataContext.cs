@@ -17,9 +17,8 @@ namespace TizzaAula
             modelBuilder.Entity<Pizzaria>().HasKey(p => p.Id);
             modelBuilder.Entity<Pizza>().HasKey(p => p.Id);
             modelBuilder.Entity<Promover>().HasKey(p => p.Id);
-            modelBuilder.Entity<Promover>()
-                .HasOne(p => p.Pizzaria)
-                .WithMany()
+
+            modelBuilder.Entity<Promover>().HasOne(p => p.Pizzaria).WithMany()
                 .HasForeignKey(p => p.CodigoPizzaria);
 
             base.OnModelCreating(modelBuilder);

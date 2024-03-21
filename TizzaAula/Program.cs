@@ -12,6 +12,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IServPizzaria, ServPizzaria>();
 builder.Services.AddScoped<IServPizza, ServPizza>();
+builder.Services.AddScoped<IServPromover, ServPromover>();
 
 builder.Services.AddDbContext<DataContext>(option => 
     option.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))

@@ -4,6 +4,7 @@
     {
         void Inserir(Pizzaria pizzaria);
         void Update(int id, UpdatePizzariaDto updatePizzariaDto);
+        void RegistrarPatrocinio(int codigoPizzaria, decimal valorPromover, DateTime dataVigencia);
     }
 
     public class ServPizzaria: IServPizzaria
@@ -34,5 +35,19 @@
             _dataContext.SaveChanges();
         }
 
+        public void RegistrarPatrocinio(int codigoPizzaria, decimal valorPromover, DateTime dataVigencia)
+        {
+            var pizzaria = _dataContext.Pizzaria.Where(p => p.Id == codigoPizzaria).FirstOrDefault();
+
+            pizzaria.ValorPromover = valorPromover;
+            pizzaria.DataVigenciaPromover = dataVigencia;
+
+            _dataContext.SaveChanges();
+
+
+        }
+
     }
+
+    
 }

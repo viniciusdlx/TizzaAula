@@ -12,5 +12,9 @@
 
         public string Responsavel { get; set; }
 
+        public decimal ValorPromover { get; set; }
+
+        public DateTime DataVigenciaPromover { get; set; }
+
     }
 }
